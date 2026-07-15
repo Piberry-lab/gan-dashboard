@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>계산 대시보드</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="대시보드">
+<link rel="stylesheet" href="style.css">
+<script defer src="app.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Computational Campaign · Internal</p>
+  <h1>계산 진행 대시보드</h1>
+  <p class="sub">연구용 상태 보드 — 계산 세부 내용과 원본 데이터는 공개하지 않습니다</p>
+  <div class="asof"><span class="dot"></span><span id="asof">—</span> · 수동 갱신 스냅샷</div>
+
+  <a class="gal" href="structures.html">🧬 구조 갤러리 안내 →</a>
+
+  <h2>계산 진행</h2>
+  <div id="jobs"><noscript><div class="err">상태 표시는 JavaScript가 필요합니다.</div></noscript></div>
+
+  <h2>결과 요약 (범주형)</h2>
+  <div class="ea" id="summary"></div>
+
+  <h2>지난 작업 — 총 <span id="dcount">—</span>개</h2>
+  <div class="ea tight">
+    <div id="donelist"></div>
+    <button id="more" class="morebtn" type="button">더보기 ▾</button>
+  </div>
+
+  <footer>
+    📱 <b>홈 화면에 앱으로 설치</b> — iPhone: Safari 공유 ⎙ → “홈 화면에 추가” · Android: Chrome 메뉴 ⋮ → “앱 설치”<br>
+    이 페이지는 공개용으로 정제된 상태 요약만 표시합니다 (작업 별칭 · 상태 · 대략 진행률/경과시간).<br>
+    <a href="https://github.com/Piberry-lab/gan-dashboard" rel="noopener">source</a>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,471 @@
+{
+ "schema": "public-dashboard/v1",
+ "generated": "2026-07-15T23:26:45+09:00",
+ "active": [
+  {
+   "alias": "JOB-61",
+   "status": "running",
+   "progress": 10,
+   "elapsed_hours": 8.5,
+   "note": "opt_in_progress"
+  },
+  {
+   "alias": "JOB-64",
+   "status": "running",
+   "progress": 15,
+   "elapsed_hours": 8.0,
+   "note": "opt_in_progress"
+  }
+ ],
+ "history": [
+  {
+   "alias": "JOB-63",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_minutes": 200,
+   "finished_on": "2026-07-15"
+  },
+  {
+   "alias": "JOB-62",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_minutes": 295,
+   "finished_on": "2026-07-15"
+  },
+  {
+   "alias": "JOB-60",
+   "status": "failed",
+   "type": "adsorption",
+   "runtime_minutes": 710,
+   "finished_on": "2026-07-15"
+  },
+  {
+   "alias": "JOB-59",
+   "status": "failed",
+   "type": "adsorption",
+   "runtime_minutes": 770,
+   "finished_on": "2026-07-15"
+  },
+  {
+   "alias": "JOB-58",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_minutes": 235,
+   "finished_on": "2026-07-14"
+  },
+  {
+   "alias": "JOB-57",
+   "status": "failed",
+   "type": "adsorption",
+   "runtime_minutes": 515,
+   "finished_on": "2026-07-14"
+  },
+  {
+   "alias": "JOB-56",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_minutes": 340,
+   "finished_on": "2026-07-14"
+  },
+  {
+   "alias": "JOB-53",
+   "status": "completed",
+   "type": "surface",
+   "runtime_minutes": 340,
+   "finished_on": "2026-07-14"
+  },
+  {
+   "alias": "JOB-55",
+   "status": "completed",
+   "type": "post",
+   "runtime_minutes": 20,
+   "finished_on": "2026-07-13"
+  },
+  {
+   "alias": "JOB-54",
+   "status": "completed",
+   "type": "post",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-13"
+  },
+  {
+   "alias": "JOB-52",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_minutes": 340,
+   "finished_on": "2026-07-13"
+  },
+  {
+   "alias": "JOB-51",
+   "status": "completed",
+   "type": "surface",
+   "runtime_minutes": 120,
+   "finished_on": "2026-07-13"
+  },
+  {
+   "alias": "JOB-50",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_minutes": 155,
+   "finished_on": "2026-07-13"
+  },
+  {
+   "alias": "JOB-49",
+   "status": "completed",
+   "type": "surface",
+   "runtime_minutes": 210,
+   "finished_on": "2026-07-13"
+  },
+  {
+   "alias": "JOB-48",
+   "status": "completed",
+   "type": "surface",
+   "runtime_minutes": 155,
+   "finished_on": "2026-07-12"
+  },
+  {
+   "alias": "JOB-47",
+   "status": "completed",
+   "type": "surface",
+   "runtime_minutes": 340,
+   "finished_on": "2026-07-12"
+  },
+  {
+   "alias": "JOB-46",
+   "status": "completed",
+   "type": "surface",
+   "runtime_minutes": 340,
+   "finished_on": "2026-07-12"
+  },
+  {
+   "alias": "JOB-45",
+   "status": "completed",
+   "type": "surface",
+   "runtime_minutes": 340,
+   "finished_on": "2026-07-10"
+  },
+  {
+   "alias": "JOB-44",
+   "status": "completed",
+   "type": "surface",
+   "runtime_minutes": 325,
+   "finished_on": "2026-07-10"
+  },
+  {
+   "alias": "JOB-43",
+   "status": "completed",
+   "type": "surface",
+   "runtime_minutes": 340,
+   "finished_on": "2026-07-10"
+  },
+  {
+   "alias": "JOB-42",
+   "status": "completed",
+   "type": "surface",
+   "runtime_minutes": 340,
+   "finished_on": "2026-07-10"
+  },
+  {
+   "alias": "JOB-41",
+   "status": "completed",
+   "type": "surface",
+   "runtime_minutes": 330,
+   "finished_on": "2026-07-10"
+  },
+  {
+   "alias": "JOB-40",
+   "status": "completed",
+   "type": "surface",
+   "runtime_minutes": 340,
+   "finished_on": "2026-07-09"
+  },
+  {
+   "alias": "JOB-38",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 110,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-39",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 70,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-36",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 40,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-37",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 35,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-35",
+   "status": "completed",
+   "type": "post",
+   "runtime_minutes": 30,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-23",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_minutes": 340,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-34",
+   "status": "completed",
+   "type": "post",
+   "runtime_minutes": 10,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-33",
+   "status": "completed",
+   "type": "post",
+   "runtime_minutes": 15,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-32",
+   "status": "completed",
+   "type": "post",
+   "runtime_minutes": 10,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-31",
+   "status": "failed",
+   "type": "post",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-30",
+   "status": "completed",
+   "type": "post",
+   "runtime_minutes": 10,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-29",
+   "status": "completed",
+   "type": "post",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-28",
+   "status": "completed",
+   "type": "post",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-27",
+   "status": "completed",
+   "type": "post",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-26",
+   "status": "completed",
+   "type": "post",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-25",
+   "status": "failed",
+   "type": "post",
+   "runtime_minutes": 0,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-24",
+   "status": "failed",
+   "type": "post",
+   "runtime_minutes": 0,
+   "finished_on": "2026-07-08"
+  },
+  {
+   "alias": "JOB-22",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 85,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-21",
+   "status": "failed",
+   "type": "molecule",
+   "runtime_minutes": 120,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-20",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 40,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-19",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-18",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-17",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-15",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-16",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 0,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-14",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-12",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 10,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-13",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 10,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-10",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 25,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-11",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-07",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 25,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-09",
+   "status": "failed",
+   "type": "molecule",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-08",
+   "status": "failed",
+   "type": "molecule",
+   "runtime_minutes": 0,
+   "finished_on": "2026-07-07"
+  },
+  {
+   "alias": "JOB-06",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_minutes": 5,
+   "finished_on": "2026-07-06"
+  },
+  {
+   "alias": "JOB-05",
+   "status": "failed",
+   "type": "molecule",
+   "runtime_minutes": 0,
+   "finished_on": "2026-07-06"
+  },
+  {
+   "alias": "JOB-04",
+   "status": "failed",
+   "type": "molecule",
+   "runtime_minutes": 0,
+   "finished_on": "2026-07-06"
+  },
+  {
+   "alias": "JOB-03",
+   "status": "failed",
+   "type": "molecule",
+   "runtime_minutes": 0,
+   "finished_on": "2026-07-06"
+  },
+  {
+   "alias": "JOB-02",
+   "status": "failed",
+   "type": "molecule",
+   "runtime_minutes": 0,
+   "finished_on": "2026-07-06"
+  },
+  {
+   "alias": "JOB-01",
+   "status": "failed",
+   "type": "molecule",
+   "runtime_minutes": 0,
+   "finished_on": "2026-07-06"
+  }
+ ],
+ "summary": {
+  "ranking": [
+   "CAND-A",
+   "CAND-B",
+   "CAND-C"
+  ],
+  "relations": [
+   "gt",
+   "muchgt"
+  ],
+  "pending": [
+   "CAND-D"
+  ],
+  "status": "internal_review"
+ }
+}

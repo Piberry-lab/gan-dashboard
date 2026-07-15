@@ -1,0 +1,17 @@
+# Never commit credentials or private research tooling to this PUBLIC repo.
+.env
+*.env
+*.key
+*.pem
+token*
+credentials*.json
+*service*account*.json
+sa-*.json
+private/
+*.xyz
+*.cif
+*.cube
+*.glb
+pw.out
+pw.in
+*.out
