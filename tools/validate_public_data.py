@@ -20,6 +20,8 @@ NOTE_ENUM = {"opt_in_progress", "scf_in_progress", "needs_review",
 TYPE_ENUM = {"molecule", "surface", "adsorption", "post"}
 ACTIVE_STATUS = {"queued", "running"}
 HIST_STATUS = {"completed", "failed"}
+STAGE_ENUM = {"early", "mid", "late"}
+RUNTIME_BUCKET_ENUM = {"lt1h", "1to4h", "4to12h", "gt12h"}
 RELATION_ENUM = {"gt", "gte", "muchgt", "approx"}
 SUMMARY_STATUS = {"internal_review", "published"}
 
@@ -55,8 +57,8 @@ def main(path):
     seen = set()
     for i, a in enumerate(data["active"]):
         w = f"active[{i}]"
-        require_keys(a, ["alias", "status", "progress", "elapsed_hours",
-                         "note"], w)
+        # No exact progress/time: only a coarse stage category is allowed.
+        require_keys(a, ["alias", "status", "stage", "note"], w)
         if not ALIAS_RE.match(a["alias"]):
             fail(f"{w}: bad alias")
         if a["alias"] in seen:
@@ -64,18 +66,15 @@ def main(path):
         seen.add(a["alias"])
         if a["status"] not in ACTIVE_STATUS:
             fail(f"{w}: bad status")
-        if not (isinstance(a["progress"], int) and 0 <= a["progress"] <= 100):
-            fail(f"{w}: progress must be int 0-100")
-        eh = a["elapsed_hours"]
-        if not (isinstance(eh, (int, float)) and 0 <= eh <= 10000
-                and (eh * 2) == int(eh * 2)):
-            fail(f"{w}: elapsed_hours must be a multiple of 0.5")
+        if a["stage"] not in STAGE_ENUM:
+            fail(f"{w}: bad stage")
         if a["note"] not in NOTE_ENUM:
             fail(f"{w}: bad note code")
 
     for i, h in enumerate(data["history"]):
         w = f"history[{i}]"
-        require_keys(h, ["alias", "status", "type", "runtime_minutes",
+        # No exact runtime: only a coarse duration bucket is allowed.
+        require_keys(h, ["alias", "status", "type", "runtime_bucket",
                          "finished_on"], w)
         if not ALIAS_RE.match(h["alias"]):
             fail(f"{w}: bad alias")
@@ -86,9 +85,8 @@ def main(path):
             fail(f"{w}: bad status")
         if h["type"] not in TYPE_ENUM:
             fail(f"{w}: bad type")
-        rm = h["runtime_minutes"]
-        if not (isinstance(rm, int) and 0 <= rm <= 10 ** 6 and rm % 5 == 0):
-            fail(f"{w}: runtime_minutes must be int, multiple of 5")
+        if h["runtime_bucket"] not in RUNTIME_BUCKET_ENUM:
+            fail(f"{w}: bad runtime_bucket")
         if not DATE_RE.match(h["finished_on"]):
             fail(f"{w}: bad finished_on")
 
@@ -103,6 +101,10 @@ def main(path):
         fail("summary.pending: CAND-X ids only")
     if s["status"] not in SUMMARY_STATUS:
         fail("summary.status invalid")
+    # Unpublished stability rankings must not appear in PUBLIC output.
+    if s["status"] != "published" and (s["ranking"] or s["relations"]
+                                       or s["pending"]):
+        fail("summary: ranking/relations/pending must be empty unless published")
 
     print(f"OK: {path} valid "
           f"({len(data['active'])} active, {len(data['history'])} history)")

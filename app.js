@@ -20,6 +20,10 @@ const TYPE = {
   molecule: "분자 계산", surface: "표면 계산",
   adsorption: "흡착 계산", post: "후처리",
 };
+const STAGE = { early: "초기 단계", mid: "진행 중", late: "마무리 단계" };
+const RUNTIME_BUCKET = {
+  lt1h: "1시간 미만", "1to4h": "1–4시간", "4to12h": "4–12시간", gt12h: "12시간 이상",
+};
 const REL = { gt: " > ", gte: " ≥ ", muchgt: " ≫ ", approx: " ≈ " };
 
 function el(tag, cls, text) {
@@ -31,21 +35,12 @@ function el(tag, cls, text) {
 function candLabel(id) {
   return /^CAND-[A-Z]$/.test(id) ? "후보 " + id.slice(5) : "후보 ?";
 }
-function fmtMin(min) {
-  if (min < 60) return min + "분";
-  const h = Math.floor(min / 60), m = Math.round(min % 60);
-  return m ? h + "시간 " + m + "분" : h + "시간";
-}
-function fmtH(h) {
-  const r = Math.round(h * 2) / 2;
-  return "약 " + (Number.isInteger(r) ? r : r.toFixed(1)) + "시간";
-}
 
-function renderActive(list, genMs) {
+function renderActive(list) {
   const box = document.getElementById("jobs");
   while (box.firstChild) box.removeChild(box.firstChild);
   if (!list.length) box.appendChild(el("div", "detail", "진행 중인 계산이 없습니다."));
-  const live = [];
+  const STAGE_TRACK = { early: "indet", mid: "indet", late: "indet" };
   list.forEach(j => {
     const s = STATUS[j.status] || STATUS.queued;
     const card = el("div", "job" + (j.status === "running" ? " active" : ""));
@@ -54,32 +49,18 @@ function renderActive(list, genMs) {
     head.appendChild(el("span", "nm", j.alias));
     card.appendChild(head);
     card.appendChild(el("div", "detail", NOTE[j.note] || "진행 중"));
-    const track = el("div", "track" + (j.status === "running" ? "" : " indet"));
-    const fill = el("div", "fill");
-    track.appendChild(fill);
+    // Indeterminate bar only — no exact percentage or elapsed time is shown.
+    const track = el("div", "track indet");
+    track.appendChild(el("div", "fill"));
     card.appendChild(track);
     const times = el("div", "times");
+    if (j.status === "running")
+      times.appendChild(el("span", "pct", STAGE[j.stage] || "진행 중"));
+    else
+      times.appendChild(el("span", null, "자원 대기 중"));
     card.appendChild(times);
     box.appendChild(card);
-    if (j.status === "running") {
-      fill.style.width = j.progress + "%";
-      live.push({ j, times });
-    } else {
-      times.appendChild(el("span", null, "자원 대기 중"));
-    }
   });
-  function tick() {
-    const extra = Math.max(0, (Date.now() - genMs) / 3600000);
-    live.forEach(({ j, times }) => {
-      while (times.firstChild) times.removeChild(times.firstChild);
-      const sp = el("span", null, "경과 ");
-      sp.appendChild(el("b", null, fmtH(j.elapsed_hours + extra)));
-      times.appendChild(sp);
-      times.appendChild(el("span", "pct", "진행률 ~" + j.progress + "%"));
-    });
-  }
-  tick();
-  setInterval(tick, 60000);
 }
 
 function renderSummary(s) {
@@ -109,7 +90,7 @@ function renderHistory(list) {
     d.appendChild(el("span", "st " + s.cls, s.label));
     d.appendChild(el("span", "nm", r.alias));
     d.appendChild(el("span", "dd", TYPE[r.type] || ""));
-    d.appendChild(el("span", "dur", fmtMin(r.runtime_minutes)));
+    d.appendChild(el("span", "dur", RUNTIME_BUCKET[r.runtime_bucket] || ""));
     d.appendChild(el("span", "when", r.finished_on.slice(5)));
     return d;
   };
@@ -135,10 +116,9 @@ async function boot() {
     if (!res.ok) throw new Error(String(res.status));
     const d = await res.json();
     if (d.schema !== "public-dashboard/v1") throw new Error("schema");
-    const genMs = Date.parse(d.generated);
     document.getElementById("asof").textContent =
       d.generated.slice(0, 16).replace("T", " ") + " KST";
-    renderActive(d.active, genMs);
+    renderActive(d.active);
     renderSummary(d.summary);
     renderHistory(d.history);
   } catch (e) {
