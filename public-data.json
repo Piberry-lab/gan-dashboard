@@ -1,21 +1,77 @@
 {
  "schema": "public-dashboard/v1",
- "generated": "2026-07-16T00:23:37+09:00",
+ "generated": "2026-07-19T23:23:58+09:00",
  "active": [
   {
-   "alias": "JOB-61",
-   "status": "running",
+   "alias": "JOB-71",
+   "status": "queued",
    "stage": "early",
-   "note": "opt_in_progress"
+   "note": "queued_capacity"
   },
   {
-   "alias": "JOB-64",
-   "status": "running",
+   "alias": "JOB-72",
+   "status": "queued",
    "stage": "early",
-   "note": "opt_in_progress"
+   "note": "queued_capacity"
   }
  ],
  "history": [
+  {
+   "alias": "JOB-70",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_bucket": "1to4h",
+   "finished_on": "2026-07-18"
+  },
+  {
+   "alias": "JOB-69",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_bucket": "lt1h",
+   "finished_on": "2026-07-18"
+  },
+  {
+   "alias": "JOB-67",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_bucket": "4to12h",
+   "finished_on": "2026-07-18"
+  },
+  {
+   "alias": "JOB-68",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_bucket": "4to12h",
+   "finished_on": "2026-07-18"
+  },
+  {
+   "alias": "JOB-61",
+   "status": "completed",
+   "type": "surface",
+   "runtime_bucket": "gt12h",
+   "finished_on": "2026-07-18"
+  },
+  {
+   "alias": "JOB-66",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_bucket": "gt12h",
+   "finished_on": "2026-07-17"
+  },
+  {
+   "alias": "JOB-65",
+   "status": "completed",
+   "type": "molecule",
+   "runtime_bucket": "lt1h",
+   "finished_on": "2026-07-17"
+  },
+  {
+   "alias": "JOB-64",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_bucket": "gt12h",
+   "finished_on": "2026-07-17"
+  },
   {
    "alias": "JOB-63",
    "status": "completed",
