@@ -1,21 +1,22 @@
 {
  "schema": "public-dashboard/v1",
- "generated": "2026-07-20T01:13:52+09:00",
- "active": [
-  {
-   "alias": "JOB-71",
-   "status": "queued",
-   "stage": "early",
-   "note": "queued_capacity"
-  },
+ "generated": "2026-07-23T00:04:19+09:00",
+ "active": [],
+ "history": [
   {
    "alias": "JOB-72",
-   "status": "queued",
-   "stage": "early",
-   "note": "queued_capacity"
-  }
- ],
- "history": [
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_bucket": "gt12h",
+   "finished_on": "2026-07-20"
+  },
+  {
+   "alias": "JOB-71",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_bucket": "gt12h",
+   "finished_on": "2026-07-20"
+  },
   {
    "alias": "JOB-70",
    "status": "completed",
