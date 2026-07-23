@@ -1,21 +1,22 @@
 {
  "schema": "public-dashboard/v1",
- "generated": "2026-07-23T00:15:11+09:00",
+ "generated": "2026-07-23T16:49:33+09:00",
  "active": [
   {
    "alias": "JOB-74",
-   "status": "queued",
+   "status": "running",
    "stage": "early",
-   "note": "queued_capacity"
-  },
-  {
-   "alias": "JOB-73",
-   "status": "queued",
-   "stage": "early",
-   "note": "queued_capacity"
+   "note": "opt_in_progress"
   }
  ],
  "history": [
+  {
+   "alias": "JOB-73",
+   "status": "completed",
+   "type": "adsorption",
+   "runtime_bucket": "4to12h",
+   "finished_on": "2026-07-23"
+  },
   {
    "alias": "JOB-72",
    "status": "completed",
