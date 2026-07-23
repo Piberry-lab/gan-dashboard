@@ -1,12 +1,24 @@
 {
  "schema": "public-dashboard/v1",
- "generated": "2026-07-23T16:49:33+09:00",
+ "generated": "2026-07-23T17:10:06+09:00",
  "active": [
   {
    "alias": "JOB-74",
    "status": "running",
    "stage": "early",
    "note": "opt_in_progress"
+  },
+  {
+   "alias": "JOB-75",
+   "status": "queued",
+   "stage": "early",
+   "note": "queued_capacity"
+  },
+  {
+   "alias": "JOB-76",
+   "status": "queued",
+   "stage": "early",
+   "note": "queued_capacity"
   }
  ],
  "history": [
